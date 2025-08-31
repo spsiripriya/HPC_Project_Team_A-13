@@ -24,7 +24,7 @@ const int EPOCHS = 2;
 const float LR = 0.001f;
 
 // Dataset paths
-const std::string DATA_ROOT = "/media/siri/New Volume/Engineering/5 th sem/Project Sem 5/HPC/Dataset/Bone_Fracture_Binary_Classification/Bone_Fracture_Binary_Classification";
+const std::string DATA_ROOT = "/media/smera/New Volume/Engineering/5 th sem/Project Sem 5/HPC/Dataset/Bone_Fracture_Binary_Classification/Bone_Fracture_Binary_Classification";
 const std::string TRAIN_DIR = DATA_ROOT + "/train";
 const std::string VAL_DIR = DATA_ROOT + "/val";
 
