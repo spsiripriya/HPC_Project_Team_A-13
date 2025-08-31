@@ -47,59 +47,7 @@ std::vector<float> Conv2D::forward(const std::vector<float>& input, int H, int W
 
 std::vector<float> Conv2D::backward(const std::vector<float>& input, int H, int W,
                                    const std::vector<float>& d_out) {
-    int OH = H - k + 1;
-    int OW = W - k + 1;
-    std::fill(grad_kernels.begin(), grad_kernels.end(), 0.0f);
-    std::vector<float> d_input(in_c * H * W, 0.0f);
-
-    // grad kernels
-    for (int oc = 0; oc < out_c; ++oc) {
-        for (int ic = 0; ic < in_c; ++ic) {
-            for (int kh = 0; kh < k; ++kh) {
-                for (int kw = 0; kw < k; ++kw) {
-                    float g = 0.0f;
-                    for (int oh = 0; oh < OH; ++oh) {
-                        for (int ow = 0; ow < OW; ++ow) {
-                            int ih = oh + kh;
-                            int iw = ow + kw;
-                            float inp = input[idx3(ic, ih, iw, H, W)];
-                            float dout = d_out[(oc * OH + oh) * OW + ow];
-                            g += inp * dout;
-                        }
-                    }
-                    int gidx = (((oc * in_c + ic) * k + kh) * k + kw);
-                    grad_kernels[gidx] = g;
-                }
-            }
-        }
-    }
-
-    // grad input
-    for (int ic = 0; ic < in_c; ++ic) {
-        for (int ih = 0; ih < H; ++ih) {
-            for (int iw = 0; iw < W; ++iw) {
-                float s = 0.0f;
-                for (int oc = 0; oc < out_c; ++oc) {
-                    for (int kh = 0; kh < k; ++kh) {
-                        for (int kw = 0; kw < k; ++kw) {
-                            int oh = ih - kh;
-                            int ow = iw - kw;
-                            int OH_idx = H - k + 1;
-                            int OW_idx = W - k + 1;
-                            if (oh >= 0 && ow >= 0 && oh < OH_idx && ow < OW_idx) {
-                                int kidx = (((oc * in_c + ic) * k + kh) * k + kw);
-                                float ker = kernels[kidx];
-                                float dout = d_out[(oc * OH_idx + oh) * OW_idx + ow];
-                                s += ker * dout;
-                            }
-                        }
-                    }
-                }
-                d_input[idx3(ic, ih, iw, H, W)] = s;
-            }
-        }
-    }
-    return d_input;
+  
 }
 
 void Conv2D::step(float lr) {
@@ -126,11 +74,7 @@ std::vector<float> ReLU::forward(const std::vector<float>& x) {
 }
 
 std::vector<float> ReLU::backward(const std::vector<float>& grad_out) {
-    std::vector<float> g(grad_out.size());
-    for (size_t i = 0; i < grad_out.size(); ++i) {
-        g[i] = last_in[i] > 0 ? grad_out[i] : 0.0f;
-    }
-    return g;
+  
 }
 
 // MaxPool2 Implementation
@@ -172,19 +116,7 @@ std::vector<float> MaxPool2::forward(const std::vector<float>& x, int C, int H, 
 }
 
 std::vector<float> MaxPool2::backward(const std::vector<float>& grad_out) {
-    std::vector<float> g(in_c * in_h * in_w, 0.0f);
-    for (int c = 0; c < in_c; ++c) {
-        for (int oh = 0; oh < out_h; ++oh) {
-            for (int ow = 0; ow < out_w; ++ow) {
-                int out_idx = (c * out_h + oh) * out_w + ow;
-                int src = max_idx[out_idx];
-                if (src >= 0) {
-                    g[src] += grad_out[out_idx];
-                }
-            }
-        }
-    }
-    return g;
+   
 }
 
 // FC Implementation
@@ -217,18 +149,7 @@ std::vector<float> FC::forward(const std::vector<float>& in) {
 }
 
 std::vector<float> FC::backward(const std::vector<float>& grad_out) {
-    std::fill(grad_W.begin(), grad_W.end(), 0.0f);
-    std::fill(grad_b.begin(), grad_b.end(), 0.0f);
-    std::vector<float> grad_in(in_size, 0.0f);
 
-    for (int o = 0; o < out_size; ++o) {
-        grad_b[o] = grad_out[o];
-        for (int i = 0; i < in_size; ++i) {
-            grad_W[o * in_size + i] = grad_out[o] * last_in[i];
-            grad_in[i] += W[o * in_size + i] * grad_out[o];
-        }
-    }
-    return grad_in;
 }
 
 void FC::step(float lr) {
