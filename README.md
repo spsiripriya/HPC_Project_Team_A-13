@@ -27,7 +27,7 @@ Currently, a standard CNN has been implemented in C++.
 - *GPU Acceleration* using CUDA for faster convolution and backpropagation
 
 ## Build and Run
-Compile the project using:
+Compile and run the project using:
 ```bash
 g++ main.cpp model.cpp layers.cpp dataset.cpp utils.cpp training.cpp -o cnn_run pkg-config --cflags --libs opencv4 -std=c++17 -O2
 
