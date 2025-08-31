@@ -17,7 +17,7 @@ Currently, a standard CNN has been implemented in C++.
 
 | Member | Role | Files |
 |--------|------|-------|
-| Member 1 | Python Implementation | - |
+| Member 1 | Python Implementation | fracture-ai1.ipynb, MakeFile |
 | Member 2 | Neural Network Layers | layers.h, layers.cpp |
 | Member 3 | Model Architecture & Training | utils.h, utils.cpp, Makefile, model.h, model.cpp, training.h, training.cpp |
 | Member 4 | Data Pipeline & Integration | dataset.h, dataset.cpp, main.cpp |
