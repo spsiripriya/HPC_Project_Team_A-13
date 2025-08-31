@@ -19,7 +19,7 @@ Currently, a standard CNN has been implemented in C++.
 |--------|------|-------|
 | Member 1 | Python Implementation | - |
 | Member 2 | Neural Network Layers | layers.h, layers.cpp |
-| Member 3 | Model Architecture & Training | utils.h, utils.cpp, Makefile, model.h, model.cpp, training.h, training.cpp |
+| Member 3 | Model Architecture & Training | utils.h, utils.cpp, model.h, model.cpp, training.h, training.cpp |
 | Member 4 | Data Pipeline & Integration | dataset.h, dataset.cpp, main.cpp |
 
 ## Future Work
