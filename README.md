@@ -30,5 +30,9 @@ Currently, a standard CNN has been implemented in C++.
 ## Build and Run
 Compile and run the project using:
 ```bash
+Compile using:
 g++ main.cpp model.cpp layers.cpp dataset.cpp utils.cpp training.cpp \
     -o cnn_run $(pkg-config --cflags --libs opencv4) -std=c++17 -O2
+
+Run using:
+./cnn_run
