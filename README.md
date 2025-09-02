@@ -17,7 +17,11 @@ Currently, a standard CNN has been implemented in C++.
 
 | Member | Role | Files |
 |--------|------|-------|
+<<<<<<< HEAD
 | Member 1 | Python Implementation | - |
+=======
+| Member 1 | Python Implementation | Makefile, fracture-ai1.ipynb |
+>>>>>>> 8ab56ef (Updated README with project details)
 | Member 2 | Neural Network Layers | layers.h, layers.cpp |
 | Member 3 | Model Architecture & Training | utils.h, utils.cpp, model.h, model.cpp, training.h, training.cpp |
 | Member 4 | Data Pipeline & Integration | dataset.h, dataset.cpp, main.cpp |
@@ -32,4 +36,8 @@ Compile and run the project using:
 g++ main.cpp model.cpp layers.cpp dataset.cpp utils.cpp training.cpp -o cnn_run pkg-config --cflags --libs opencv4 -std=c++17 -O2
 
 Run the project using:
+<<<<<<< HEAD
 ./cnn_run
+=======
+./cnn_run
+>>>>>>> 8ab56ef (Updated README with project details)
