@@ -1,6 +1,3 @@
-// main.cu - Training loop and evaluation
-// Contributor: Person 4
-// This module contains the main training loop, evaluation metrics, and program entry
 
 #include <iostream>
 #include <random>
