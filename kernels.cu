@@ -1,5 +1,4 @@
 // kernels.cu - CUDA kernel implementations
-// Contributor: Person 1
 // This module contains all CUDA kernel functions for forward and backward operations
 
 #include "kernels.h"
