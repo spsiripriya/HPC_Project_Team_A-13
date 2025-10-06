@@ -1,5 +1,5 @@
 // kernels.cu - CUDA kernel implementations
-// This module contains all CUDA kernel functions for forward and backward operations
+// This code has all CUDA kernel functions for forward and backward operations 
 
 #include "kernels.h"
 #include <cuda_runtime.h>
