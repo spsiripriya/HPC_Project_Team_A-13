@@ -1,5 +1,4 @@
 // kernels.h - Header file for CUDA kernels
-// Contributor: Person 1
 
 #ifndef KERNELS_H
 #define KERNELS_H
