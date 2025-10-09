@@ -14,7 +14,7 @@ const int EPOCHS = 20;
 const float INITIAL_LR = 0.001f;
 
 // Update these paths to match your dataset location
-const std::string DATA_ROOT = "/media/hasini/CC0A416A0A41531E/B_TECH_SUBJ/Sem5/High Performance Cloud Computing/Project/bone_fract/dataset";
+const std::string DATA_ROOT = "/media/CC0A416A0A41531E/B_TECH_SUBJ/Sem5/High Performance Cloud Computing/Project/bone_fract/dataset";
 const std::string TRAIN_DIR = DATA_ROOT + "/train";
 const std::string VAL_DIR = DATA_ROOT + "/val";
 const std::string TEST_DIR = DATA_ROOT + "/test";
