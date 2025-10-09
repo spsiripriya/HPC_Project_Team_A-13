@@ -1,4 +1,4 @@
-# Distributed and CUDA-Accelerated Deep Learning for Image Classification
+# CUDA-Accelerated Deep Learning for Image Classification
 
 ## Project Overview
 This project implements a complete Convolutional Neural Network (CNN) training system in C++ using OpenCV for image processing.  
