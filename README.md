@@ -1,15 +1,21 @@
-# CUDA-Accelerated Deep Learning for Image Classification
+# Bone Fracture Detection Using CNN in C++
 
-## Project Overview
-This project implements a complete Convolutional Neural Network (CNN) training system in C++ using OpenCV for image processing.  
-The system classifies bone X-ray images as either normal or fractured.
+## Overview
 
-### Key Features
-- CNN implementation from scratch (no external ML frameworks)  
-- Custom backpropagation algorithm  
-- OpenCV integration for image preprocessing and augmentation  
-- Modular architecture with clear separation of concerns  
-- Real-time training progress monitoring  
+This project implements a Convolutional Neural Network (CNN) from scratch in C++ for classifying bone X-ray images as either **Normal** or **Fractured**. The project uses OpenCV for image preprocessing and follows a modular architecture, implementing forward propagation, backpropagation, and model training without relying on deep learning frameworks such as TensorFlow or PyTorch.
+
+---
+
+## Features
+
+- CNN implemented from scratch in C++
+- Custom forward and backpropagation
+- Bone fracture classification
+- Image preprocessing using OpenCV
+- Modular and reusable code structure
+- Training and inference pipeline
+
+---
 
 ### Project Status
 Currently, a standard CNN has been implemented in C++.  
